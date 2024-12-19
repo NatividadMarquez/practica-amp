@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Practica - My Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Practica</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#configuracion-de-un-servidor-nginx-con-hosts-virtuales-y-directorios-de-usuario" class="nav-link">Configuración de un Servidor Nginx con Hosts Virtuales y Directorios de Usuario</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#introduccion" class="nav-link">Introducción</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#instalacion-de-nginx" class="nav-link">Instalación de nginx</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#creacion-de-usuarios-del-sistema" class="nav-link">Creación de Usuarios del Sistema</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configuracion-de-directorios-y-permisos" class="nav-link">Configuración de Directorios y Permisos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#creacion-de-contenido-web" class="nav-link">Creación de Contenido Web</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configuracion-de-nginx-para-hosts-virtuales" class="nav-link">Configuración de Nginx para Hosts Virtuales</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#generacion-de-certificados-ssl" class="nav-link">Generación de Certificados SSL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configuracion-del-archivo-hosts" class="nav-link">Configuración del Archivo Hosts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#comprobacion-de-funcionamiento-de-los-hosts-virtuales" class="nav-link">Comprobación de Funcionamiento de los Hosts Virtuales</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Natividad Márquez Baena</p>
+<h1 id="configuracion-de-un-servidor-nginx-con-hosts-virtuales-y-directorios-de-usuario">Configuración de un Servidor Nginx con Hosts Virtuales y Directorios de Usuario</h1>
+<ol>
+<li>Introducción</li>
+<li>Instalación de nginx</li>
+<li>Creación de Usuarios del Sistema</li>
+<li>Configuración de Directorios y Permisos</li>
+<li>Creación de Contenido Web</li>
+<li>Configuración de Nginx para Hosts Virtuales</li>
+<li>Generación de Certificados SSL</li>
+<li>Configuración del Archivo Hosts</li>
+<li>Comprobación de Funcionamiento de los Hosts Virtuales</li>
+</ol>
+<h2 id="introduccion">Introducción</h2>
+<p>En esta práctica, se configurará un servidor web Nginx, capaz de manejar múltiples sitios mediante hosts virtuales. Además se le atribuirán a usuarios del sistema permisos para que gestionen sus propios sitios a través de directorios <code>public_html</code>, todo esto en un entorno accesible y seguro mediante la implementación de conexiones HTTPS.</p>
+<h2 id="instalacion-de-nginx">Instalación de nginx</h2>
+<p>Para esta práctica, se trabajará desde una máquina anfitriona que estará conectada a una máquina virtual que ejecuta el sistema operativo Debian. Esta conexión se realizará a través del protocolo SSH (Secure Shell), que proporciona un acceso remoto seguro al servidor mediante una conexión cifrada y con credenciales de acceso. Se ha utilizado el nombre de usuario y la ip de la máquina virtual.</p>
+<p><img alt="alt text" src="../image.png" /></p>
+<h2 id="creacion-de-usuarios-del-sistema">Creación de Usuarios del Sistema</h2>
+<p>Se crearán dos usuarios para esta práctica, se usará el comando <code>sudo useradd -m -s /bin/bash nombre_usuario</code>, donde -m creará un directorio personal para el usuario y -s especifica que el shell asignado al usuario será Bash.</p>
+<p><img alt="alt text" src="../image-1.png" /></p>
+<p>Una vez creado el usuario, es necesario asignar una contraseña y acceder para comprobar que se ha creado correctamente:</p>
+<p><img alt="alt text" src="../image-2.png" />
+<img alt="alt text" src="../image-3.png" />
+<img alt="alt text" src="../image-4.png" /></p>
+<h2 id="configuracion-de-directorios-y-permisos">Configuración de Directorios y Permisos</h2>
+<p>Se crean directorios para public_html dentro de los usuarios creados.</p>
+<p><img alt="alt text" src="../image-5.png" /></p>
+<p>Ahora se asignarán permisos. Para garantizar que el servidor web Nginx pueda acceder al contenido de los directorios public_html de cada usuario, es necesario ajustar los permisos de dichas carpetas. Se configurarán las Listas de Control de Acceso (ACL) utilizando el comando setfacl.</p>
+<p><img alt="alt text" src="../image-6.png" />
+<img alt="alt text" src="../image-7.png" /></p>
+<h2 id="creacion-de-contenido-web">Creación de Contenido Web</h2>
+<p>Se crearán dos archivos <code>index.html</code> para los usuarios creados en las carpetas public_html. Primero para el usuario 1:</p>
+<p><img alt="alt text" src="../image-10.png" />
+<img alt="alt text" src="../image-11.png" /></p>
+<p>Y también al usuario 2:</p>
+<p><img alt="alt text" src="../image-8.png" />
+<img alt="alt text" src="../image-9.png" /></p>
+<h2 id="configuracion-de-nginx-para-hosts-virtuales">Configuración de Nginx para Hosts Virtuales</h2>
+<p>El servidor Nginx es una pieza clave en esta práctica, ya que será el encargado de servir los sitios web alojados en los directorios <code>public_html</code> de cada usuario. En este equipo nginx estaba instalado previamente, consultamos su estado con <code>systemctl status nginx</code>.
+En caso de no disponerlo, se puede instalar mediante <code>apt-get install nginx</code>.</p>
+<p><img alt="alt text" src="../image-12.png" /></p>
+<h2 id="generacion-de-certificados-ssl">Generación de Certificados SSL</h2>
+<p>El uso de certificados SSL es fundamental para garantizar la seguridad de las conexiones entre los usuarios y el servidor web. Se generarán certificados autofirmados para habilitar la conexión segura mediante HTTPS para cada uno de los usuarios. La emisión de certificados se realizará para ambos usuarios.</p>
+<p><img alt="alt text" src="../image-13.png" />
+<img alt="alt text" src="../image-14.png" /></p>
+<p>Se solicitará una serie de datos durante la generación del certificado. Algunos de ellos aparecerán en el certificado cuando se muestre. </p>
+<p><img alt="alt text" src="../image-15.png" /></p>
+<h2 id="configuracion-del-archivo-hosts">Configuración del Archivo Hosts</h2>
+<p>Crearemos un archivo de configuración para el usuario1 y usuario2 dentro del directorio <code>/etc/nginx/sites-available</code>.</p>
+<p><img alt="alt text" src="../image-16.png" />
+<img alt="alt text" src="../image-18.png" /></p>
+<p>Dentro del archivo, agrega la siguiente configuración:</p>
+<p><img alt="alt text" src="../image-17.png" />
+<img alt="alt text" src="../image-19.png" /></p>
+<p>Se crearán enlaces simbólicos de los archivos de los dos usuarios  (<code>sites-available</code>), deben habilitarse creando enlaces simbólicos en <code>sites-enabled</code>.</p>
+<p><img alt="alt text" src="../image-20.png" /></p>
+<p>Se hará uso del comando <code>nginx -t</code> para comprobar que la sintaxis es correcta y reiniciar el sistema.</p>
+<p><img alt="alt text" src="../image-22.png" /></p>
+<p>Es importante modificar el archivo hosts del sistema que se encuentra en <code>C:\Windows\System32\drivers\etc\hosts</code>. Se añade al archivo la dirección IP y los nombres de los host virtuales.</p>
+<p><img alt="alt text" src="../image-23.png" /></p>
+<h2 id="comprobacion-de-funcionamiento-de-los-hosts-virtuales">Comprobación de Funcionamiento de los Hosts Virtuales</h2>
+<p>Por último se comprueba el acceso a los sitios web de los usuarios desde el navegador web y los certificados emitivos.
+Para acceder al sitio con https, se abre un navegador web en la máquina anfitriona, se ingresa la URL y se nos indicará si la conexión es segura. En este paso se puede comprobar los detalles del certificado como su validez, el dominio y por quién ha sido emitido como autofirmado. </p>
+<p><img alt="alt text" src="../image-24.png" />
+<img alt="alt text" src="../image-25.png" /></p>
+<p>Se debería de visualizar el contenido de la web.</p>
+<p><img alt="alt text" src="../image-27.png" /></p>
+<p>Lo mismo para el otro sitio web.</p>
+<p><img alt="alt text" src="../image-28.png" />
+<img alt="alt text" src="../image-29.png" /></p>
+<p>Para finalmente visualizar el contenido. </p>
+<p><img alt="alt text" src="../image-30.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
